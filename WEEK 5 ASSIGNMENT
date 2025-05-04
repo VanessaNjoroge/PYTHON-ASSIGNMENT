@@ -1,0 +1,26 @@
+class Superhero:
+    def __init__(self, name, power, city):
+        self.name = name
+        self.power = power
+        self.city = city
+
+    def introduce(self):
+        print(f"I am {self.name}, and I protect {self.city} with my {self.power}!")
+
+
+class FlyingHero(Superhero):
+    def __init__(self, name, city, speed):
+        super().__init__(name, "Flight", city)
+        self.speed = speed
+
+    def fly(self):
+        print(f"{self.name} is flying at {self.speed} km/h over {self.city}!")
+
+
+class StealthHero(Superhero):
+    def __init__(self, name, city):
+        super().__init__(name, "Invisibility", city)
+        self.__mission = "Secret"  # Private attribute
+
+    def reveal_mission(self):
+        print(f"{self.name}'s mission is: {self.__mission}")
